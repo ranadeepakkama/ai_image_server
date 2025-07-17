@@ -8,7 +8,7 @@ const app = express()
 app.use(cors());
 app.use(express.json());
 
-const API_KEY = process.env.GOOGLE_API_KEY; // Updated variable name
+const API_KEY = 'AIzaSyCzz7477_Ly_j1PMEiIBXdjXHHn3wXj5dY';
 const PORT = process.env.PORT || 3001;
 
 app.post('/api/generate-image', async (req,res) => {
@@ -16,7 +16,7 @@ app.post('/api/generate-image', async (req,res) => {
         const {prompt} = req.body
         const ai = new GoogleGenAI({apiKey: API_KEY});
 
-        // Set responseModalities to include "Image" so the model can generate  an image
+      
         const response = await ai.models.generateContent({
             model: "gemini-2.0-flash-preview-image-generation",
             contents: prompt,
