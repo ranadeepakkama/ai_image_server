@@ -12,8 +12,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "type": "module"
+    "express": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
