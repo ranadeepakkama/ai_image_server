@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express'
 import cors from 'cors'
 import { GoogleGenAI, Modality } from "@google/genai";
@@ -7,7 +8,8 @@ const app = express()
 app.use(cors());
 app.use(express.json());
 
-const API_KEY = process.env.REACT_APP_HF_API_KEY;
+const API_KEY = process.env.GOOGLE_API_KEY; // Updated variable name
+const PORT = process.env.PORT || 3001;
 
 app.post('/api/generate-image', async (req,res) => {
     try{
@@ -42,7 +44,6 @@ app.post('/api/generate-image', async (req,res) => {
 })
 
 
-const PORT = 3001;
 app.listen(PORT,() => {
     console.log(`server is running on ${PORT}`)
     })
